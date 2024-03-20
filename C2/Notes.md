@@ -62,3 +62,37 @@ Optimizer:
 1. Adam(Adaptive moment estimation)
 2. RMSProp(Root mean squared propagation)
 Both are variations of SGD(stochastic gradient descent)
+
+## Training and evaluating the model
+```python
+opt = optimizers.Adam(learning_rate=0.0005)
+model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
+model.fit(x_train, y_train, batch_size=32, epochs=10, shuffle=True)
+model.evaluate(x_test, y_test)
+# plot the prediction
+# ...
+```
+
+## Convolutional layers
+`Conv2D` applies convolutions to an input tensor with two spatial dimensions.
+parameters:
+1. filters: The number of filters to use.
+2. kernel_size: The size of the filter.
+3. strides: The number of pixels to move the filter on each step.
+4. padding: 'valid' or 'same' (valid might drop some pixels, same will pad the input with zeros)
+
+## Batch normalization
+Understanding `exploding gradient problem`.
+Two learned parameters for each channel:
+1. Scale(gamma)
+2. Shift(beta)
+
+Non-trainable parameters:
+1. Moving average
+2. Standard deviation
+
+## Dropout
+Understanding `overfitting`.
+Makes the model much better at generalizing to unseen data.
+Parameter:
+1. rate: The fraction of the input units to drop.
