@@ -57,3 +57,8 @@ Understanding the loss function:
 1. MSE: Used for regression problem, where the output is a continuous value.
 2. Binary cross-entropy: Used for binary classification problems.
 3. Categorical cross-entropy: Used for classification problems where each observation belongs to one class.
+
+Optimizer:
+1. Adam(Adaptive moment estimation)
+2. RMSProp(Root mean squared propagation)
+Both are variations of SGD(stochastic gradient descent)
